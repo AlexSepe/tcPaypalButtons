@@ -19,18 +19,45 @@
                 <attributeTypes>
                     <attributeType name="String" />
                 </attributeTypes>
+            </property>             
+            <property key="flowStatus" type="attribute" required="true">
+                <caption>flowStatus</caption>
+                <description>Status flow between Paypal Buttons and Mendix. Create a enum like "Flow Status Enums" bellow! </description>
+                <attributeTypes>
+                    <attributeType name="Enum" />
+                </attributeTypes>
+            </property>
+            <property key="flowStatusEnumDoc" type="enumeration" defaultValue="VAL_PENDING">
+                <caption>Flow Status Enums</caption>
+                <description>List of Flow status enum. Ordered by flows!</description>
+                <enumerationValues>
+			       <enumerationValue key="VAL_PENDING">VAL_PENDING - Paypal seta e aguarda mudança(onClick)</enumerationValue>
+			       <enumerationValue key="VAL_SUCCESS">VAL_SUCCESS - Mendix seta após validar com sucesso</enumerationValue>
+			       <enumerationValue key="VAL_ERROR">VAL_ERROR - Mendix seta após validar com erro</enumerationValue>
+                   <enumerationValue key="CREATION_PENDING">CREATION_PENDING - Paypal seta e aguarda orderId novo(onCreateOrder)</enumerationValue>
+			       <enumerationValue key="CREATION_SUCCESS">CREATION_SUCCESS - Mendix cria orderId com sucesso</enumerationValue>
+			       <enumerationValue key="CREATION_ERROR">CREATION_ERROR - Mendix erro ao criar orderId</enumerationValue>
+                   <enumerationValue key="APPROVED_PENDING">APPROVED_PENDING - Paypal seta e aguarda captura(onApproved)</enumerationValue>
+			       <enumerationValue key="APPROVED_SUCCESS">APPROVED_SUCCESS - Mendix captura order com sucesso</enumerationValue>
+			       <enumerationValue key="APPROVED_RESTART">APPROVED_RESTART - Mendix erro ao capturar e pede restart no processo</enumerationValue>
+                   <enumerationValue key="APPROVED_ERROR">APPROVED_ERROR - Mendix erro ao capturar e aborta o processo</enumerationValue>
+		        </enumerationValues>                
             </property>
         </propertyGroup>
 
-        <propertyGroup caption="Events">
-            <property key="onCreateOrder" type="action" required="false">
+        <propertyGroup caption="Events">            
+            <property key="onCreateOrder" type="action" required="true">
                 <caption>On Create Order request</caption>
                 <description>Action to trigger when paypal requires a new order</description>
             </property>
-            <property key="onApproved" type="action" required="false">
+            <property key="onApproved" type="action" required="true">
                 <caption>On Paypal approves</caption>
                 <description>Action to trigger when paypal approves the order</description>
-            </property>            
+            </property> 
+            <property key="onClick" type="action" required="true">
+                <caption>On Paypal click validations</caption>
+                <description>Action to trigger when user click paypal buttons</description>
+            </property>           
         </propertyGroup>
     </properties>
 </widget>

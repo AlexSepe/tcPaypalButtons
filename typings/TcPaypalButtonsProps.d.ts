@@ -6,6 +6,8 @@
 import { CSSProperties } from "react";
 import { ActionValue, DynamicValue, EditableValue } from "mendix";
 
+export type FlowStatusEnumDocEnum = "VAL_PENDING" | "VAL_SUCCESS" | "VAL_ERROR" | "CREATION_PENDING" | "CREATION_SUCCESS" | "CREATION_ERROR" | "APPROVED_PENDING" | "APPROVED_SUCCESS" | "APPROVED_RESTART" | "APPROVED_ERROR";
+
 export interface TcPaypalButtonsContainerProps {
     name: string;
     class: string;
@@ -13,8 +15,11 @@ export interface TcPaypalButtonsContainerProps {
     tabIndex?: number;
     clientId: DynamicValue<string>;
     orderId: EditableValue<string>;
+    flowStatus: EditableValue<string>;
+    flowStatusEnumDoc: FlowStatusEnumDocEnum;
     onCreateOrder?: ActionValue;
     onApproved?: ActionValue;
+    onClick?: ActionValue;
 }
 
 export interface TcPaypalButtonsPreviewProps {
@@ -28,6 +33,9 @@ export interface TcPaypalButtonsPreviewProps {
     readOnly: boolean;
     clientId: string;
     orderId: string;
+    flowStatus: string;
+    flowStatusEnumDoc: FlowStatusEnumDocEnum;
     onCreateOrder: {} | null;
     onApproved: {} | null;
+    onClick: {} | null;
 }
