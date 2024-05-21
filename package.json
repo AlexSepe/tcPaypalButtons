@@ -1,0 +1,43 @@
+{
+  "name": "tcpaypalbuttons",
+  "widgetName": "TcPaypalButtons",
+  "version": "1.0.0",
+  "description": "My widget description",
+  "copyright": "© Mendix Technology BV 2022. All rights reserved.",
+  "author": "Art + Alex",
+  "engines": {
+    "node": ">=16"
+  },
+  "license": "Apache-2.0",
+  "config": {
+    "projectPath": "C:\\\\Users\\\\alexandre.sepe\\\\Mendix\\\\PaypalGex-main",
+    "mendixHost": "http://localhost:8080",
+    "developmentPort": 3000
+  },
+  "packagePath": "truechange",
+  "scripts": {
+    "start": "pluggable-widgets-tools start:server",
+    "dev": "pluggable-widgets-tools start:web",
+    "build": "pluggable-widgets-tools build:web",
+    "lint": "pluggable-widgets-tools lint",
+    "lint:fix": "pluggable-widgets-tools lint:fix",
+    "prerelease": "npm run lint",
+    "release": "pluggable-widgets-tools release:web"
+  },
+  "devDependencies": {
+    "@mendix/pluggable-widgets-tools": "^10.7.1",
+    "@types/big.js": "^6.0.2"
+  },
+  "dependencies": {
+    "@paypal/react-paypal-js": "^8.3.0",
+    "classnames": "^2.2.6"
+  },
+  "resolutions": {
+    "react": "18.2.0",
+    "react-native": "0.72.7"
+  },
+  "overrides": {
+    "react": "18.2.0",
+    "react-native": "0.72.7"
+  }
+}

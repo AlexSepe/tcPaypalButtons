@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<widget id="truechange.tcpaypalbuttons.TcPaypalButtons" pluginWidget="true" needsEntityContext="true" offlineCapable="true"
+        supportedPlatform="Web"
+        xmlns="http://www.mendix.com/widget/1.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.mendix.com/widget/1.0/ ../node_modules/mendix/custom_widget.xsd">
+    <name>Tc Paypal Buttons</name>
+    <description>My widget description</description>
+    <icon/>
+    <properties>
+        <propertyGroup caption="General">
+            <property key="clientId" type="expression" required="true">
+                <caption>ClientId</caption>
+                <description>Paypal client Id</description>
+                <returnType type="String" />
+            </property>
+            <property key="orderId" type="attribute" required="true">
+                <caption>orderId</caption>
+                <description>New generated Paypal Order Id</description>
+                <attributeTypes>
+                    <attributeType name="String" />
+                </attributeTypes>
+            </property>
+        </propertyGroup>
+
+        <propertyGroup caption="Events">
+            <property key="onCreateOrder" type="action" required="false">
+                <caption>On Create Order request</caption>
+                <description>Action to trigger when paypal requires a new order</description>
+            </property>
+            <property key="onApproved" type="action" required="false">
+                <caption>On Paypal approves</caption>
+                <description>Action to trigger when paypal approves the order</description>
+            </property>            
+        </propertyGroup>
+    </properties>
+</widget>
