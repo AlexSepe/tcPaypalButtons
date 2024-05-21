@@ -20,6 +20,7 @@ export interface TcPaypalButtonsContainerProps {
     onCreateOrder?: ActionValue;
     onApproved?: ActionValue;
     onClick?: ActionValue;
+    onCancel?: ActionValue;
 }
 
 export interface TcPaypalButtonsPreviewProps {
@@ -38,4 +39,5 @@ export interface TcPaypalButtonsPreviewProps {
     onCreateOrder: {} | null;
     onApproved: {} | null;
     onClick: {} | null;
+    onCancel: {} | null;
 }

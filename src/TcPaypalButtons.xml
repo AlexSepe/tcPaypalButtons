@@ -57,7 +57,11 @@
             <property key="onClick" type="action" required="true">
                 <caption>On Paypal click validations</caption>
                 <description>Action to trigger when user click paypal buttons</description>
-            </property>           
+            </property>  
+            <property key="onCancel" type="action" required="true">
+                <caption>On Paypal cancel payment</caption>
+                <description>Action to trigger when user cancel the paypament window</description>
+            </property>          
         </propertyGroup>
     </properties>
 </widget>
